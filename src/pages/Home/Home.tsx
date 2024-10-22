@@ -6,19 +6,21 @@ import { CountryCard } from "../../components/CountryCard";
 import data from "../../assets/data.json";
 import style from "./styles/index.module.css";
 import { useEffect, useState } from "react";
+import { useDebounce } from "use-debounce";
 
 export const Home = () => {
   const [searchValue, setSearchValue] = useState("");
   const [countryData, setCountryData] = useState(data);
   const [visibleCountryData, setVisibleCountryData] = useState(data);
   const [selectedContinent, setSelectedContinent] = useState("All Regions");
+  const [debouncedValue] = useDebounce(searchValue, 500);
 
   useEffect(() => {
     let updatedCountryData = countryData.filter((country) => {
       return country.name.toLowerCase().includes(searchValue.toLowerCase());
     });
     setVisibleCountryData(updatedCountryData);
-  }, [searchValue]);
+  }, [debouncedValue]);
 
   useEffect(() => {
     if (selectedContinent === "All Regions") {
