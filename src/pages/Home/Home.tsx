@@ -6,19 +6,21 @@ import { CountryCard } from "../../components/CountryCard";
 import data from "../../assets/data.json";
 import style from "./styles/index.module.css";
 import { useEffect, useState } from "react";
+import { useDebounce } from "use-debounce";
 
 export const Home = () => {
   const [searchValue, setSearchValue] = useState("");
   const [countryData, setCountryData] = useState(data);
   const [visibleCountryData, setVisibleCountryData] = useState(data);
   const [selectedContinent, setSelectedContinent] = useState("All Regions");
+  const [debouncedValue] = useDebounce(searchValue, 500);
 
   useEffect(() => {
-    let updatedCountryData = visibleCountryData.filter((country) => {
+    let updatedCountryData = countryData.filter((country) => {
       return country.name.toLowerCase().includes(searchValue.toLowerCase());
     });
     setVisibleCountryData(updatedCountryData);
-  }, [searchValue]);
+  }, [debouncedValue]);
 
   useEffect(() => {
     if (selectedContinent === "All Regions") {
@@ -26,17 +28,17 @@ export const Home = () => {
       setCountryData(data);
       setSearchValue("");
     } else {
-      let updatedCountryData = countryData.filter((country) => {
+      let updatedCountryData = data.filter((country) => {
         return country.region.includes(selectedContinent);
       });
-      setCountryData(data)
+      setCountryData(updatedCountryData);
       setVisibleCountryData(updatedCountryData);
       setSearchValue("");
     }
   }, [selectedContinent]);
 
   return (
-    <>
+    <div className={`${style["home-container"]}`}>
       <Header />
       <FiltersContainer>
         <SearchBar setSearchValue={setSearchValue} searchValue={searchValue} />
@@ -58,6 +60,6 @@ export const Home = () => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };

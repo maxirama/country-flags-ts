@@ -5,7 +5,10 @@ interface ISearchBarProps {
   searchValue: string;
 }
 
-export const SearchBar: React.FC<ISearchBarProps> = ({ setSearchValue, searchValue}) => {
+export const SearchBar: React.FC<ISearchBarProps> = ({
+  setSearchValue,
+  searchValue,
+}) => {
   const handleChange = (e: any) => {
     setSearchValue(e.target.value);
   };
@@ -15,7 +18,7 @@ export const SearchBar: React.FC<ISearchBarProps> = ({ setSearchValue, searchVal
       <i className={`fa fa-search ${styles["search-icon"]}`} />
       <div>
         <input
-        value={searchValue}
+          value={searchValue}
           onChange={handleChange}
           className={styles["search-input"]}
           placeholder="Search for a country..."

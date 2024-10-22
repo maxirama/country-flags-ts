@@ -16,6 +16,7 @@ div {
   cursor: pointer;
   border: 1px solid #ccc;
   user-select: none;
+  background-color: white;
 }
 
 .dropdown-arrow {
@@ -36,6 +37,8 @@ div {
   padding: 12px 16px;
   cursor: pointer;
   margin: 0;
+  background-color: white;
+
 }
 
 .dropdown-item:hover {
