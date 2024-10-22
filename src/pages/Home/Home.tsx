@@ -2,26 +2,41 @@ import { Header } from "../../components/Header";
 import { SearchBar } from "../../components/SearchBar";
 import { FiltersContainer } from "../../components/FiltersContainer";
 import { Dropdown } from "../../components/Dropdown";
-import data from "../../assets/data.json";
 import { CountryCard } from "../../components/CountryCard";
+import { useSearchStore } from "../../store";
+import data from "../../assets/data.json";
 import style from "./styles/index.module.css";
+import { useEffect, useState } from "react";
 
 export const Home = () => {
+  const [searchValue, setSearchValue] = useState("");
+  const [countryData, setCountryData] = useState(data);
+
+  useEffect(() => {
+    let updatedCountryData = data.filter((country) => {
+      return country.name.includes(searchValue);
+    });
+    setCountryData(updatedCountryData);
+    if (searchValue === "") {
+      setCountryData(data);
+    }
+  }, [searchValue]);
+
   return (
     <>
       <Header />
       <FiltersContainer>
-        <SearchBar />
+        <SearchBar setSearchValue={setSearchValue} />
         <Dropdown />
       </FiltersContainer>
       <div className={`${style["country-card-list"]}`}>
-        {data.map((country) => {
+        {countryData.map((country) => {
           return (
             <CountryCard
               country={country.name}
               flagSource={country.flags.png}
               population={country.population}
-              capital={country.capital || "no tiene"}
+              capital={country.capital || " - "}
               region={country.region}
             />
           );
