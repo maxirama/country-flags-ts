@@ -3,7 +3,6 @@ import { SearchBar } from "../../components/SearchBar";
 import { FiltersContainer } from "../../components/FiltersContainer";
 import { Dropdown } from "../../components/Dropdown";
 import { CountryCard } from "../../components/CountryCard";
-import { useSearchStore } from "../../store";
 import data from "../../assets/data.json";
 import style from "./styles/index.module.css";
 import { useEffect, useState } from "react";
@@ -14,7 +13,7 @@ export const Home = () => {
 
   useEffect(() => {
     let updatedCountryData = data.filter((country) => {
-      return country.name.includes(searchValue);
+      return country.name.toLowerCase().includes(searchValue.toLowerCase());
     });
     setCountryData(updatedCountryData);
     if (searchValue === "") {
