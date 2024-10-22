@@ -27,15 +27,15 @@ div {
   width: 100%;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  margin-top: 0; /* Ensures no gap between the header and menu */
-  list-style-type: none; /* Removes the bullet points */
-  padding-left: 0; /* Removes left padding from the list */
+  margin-top: 0; 
+  list-style-type: none; 
+  padding-left: 0; 
 }
 
 .dropdown-item {
   padding: 12px 16px;
   cursor: pointer;
-  margin: 0; /* Ensures no margin around the items */
+  margin: 0;
 }
 
 .dropdown-item:hover {
