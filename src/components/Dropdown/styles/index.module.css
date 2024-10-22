@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+div {
+  font-family: "Lato";
+}
+
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  padding-right: 16px;
+}
+
+.dropdown-header {
+  padding: 16px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  user-select: none;
+}
+
+.dropdown-arrow {
+  float: right;
+}
+.dropdown-menu {
+  position: absolute;
+  background-color: #f1f1f1;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 0; /* Ensures no gap between the header and menu */
+  list-style-type: none; /* Removes the bullet points */
+  padding-left: 0; /* Removes left padding from the list */
+}
+
+.dropdown-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  margin: 0; /* Ensures no margin around the items */
+}
+
+.dropdown-item:hover {
+  background-color: #ddd;
+}
