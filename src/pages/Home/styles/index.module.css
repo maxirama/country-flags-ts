@@ -3,3 +3,8 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 24px;
 }
+
+.home-container {
+  background-color: #F2F2F2;
+  min-height: 100vh
+}

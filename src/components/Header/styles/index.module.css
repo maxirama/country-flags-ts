@@ -9,26 +9,26 @@
   box-shadow: 0px 5px 5px lightgray;
   display: flex;
   justify-content: space-between;
+  background-color: white;
 }
 
 .page-header > p {
-    height: 16px;
-    display: flex;
-    align-items: center;
+  height: 16px;
+  display: flex;
+  align-items: center;
 }
 
-.theme-container{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: "Lato";
-    font-weight: bold;
-    font-size: 18px;
+.theme-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Lato";
+  font-weight: bold;
+  font-size: 18px;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 }
-.theme-container :hover{
+.theme-container :hover {
   transform: scale(110%);
   transition: transform 0.3s ease-in-out;
-
 }

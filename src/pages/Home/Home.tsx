@@ -14,7 +14,7 @@ export const Home = () => {
   const [selectedContinent, setSelectedContinent] = useState("All Regions");
 
   useEffect(() => {
-    let updatedCountryData = visibleCountryData.filter((country) => {
+    let updatedCountryData = countryData.filter((country) => {
       return country.name.toLowerCase().includes(searchValue.toLowerCase());
     });
     setVisibleCountryData(updatedCountryData);
@@ -26,17 +26,17 @@ export const Home = () => {
       setCountryData(data);
       setSearchValue("");
     } else {
-      let updatedCountryData = countryData.filter((country) => {
+      let updatedCountryData = data.filter((country) => {
         return country.region.includes(selectedContinent);
       });
-      setCountryData(data)
+      setCountryData(updatedCountryData);
       setVisibleCountryData(updatedCountryData);
       setSearchValue("");
     }
   }, [selectedContinent]);
 
   return (
-    <>
+    <div className={`${style["home-container"]}`}>
       <Header />
       <FiltersContainer>
         <SearchBar setSearchValue={setSearchValue} searchValue={searchValue} />
@@ -58,6 +58,6 @@ export const Home = () => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
