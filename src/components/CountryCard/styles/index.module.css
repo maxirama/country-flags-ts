@@ -15,6 +15,14 @@
   display: flex;
   flex-direction: column;
   justify-self: center;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.country-card-container:hover {
+  transition: 0.3ms;
+  transform: scale(110%);
+  transition: transform 0.3s ease-in-out;
 }
 
 .country-card-container img {

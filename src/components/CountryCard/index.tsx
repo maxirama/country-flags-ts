@@ -18,9 +18,18 @@ export const CountryCard: React.FC<ICountryCardProps> = ({
     <div className={`${styles["country-card-container"]}`}>
       <img src={flagSource} />
       <h4>{country}</h4>
-      <span> {`Population: ${population}`}</span>
-      <span> Region: {region}</span>
-      <span> Capital: {capital} </span>
+      <span>
+        {" "}
+        <b>Population:</b> {`${population.toLocaleString()}`}
+      </span>
+      <span>
+        {" "}
+        <b>Region:</b> {region}
+      </span>
+      <span>
+        {" "}
+        <b>Capital:</b> {capital}{" "}
+      </span>
     </div>
   );
 };
