@@ -9,10 +9,16 @@ const continents = [
 import { useState } from "react";
 import style from "./styles/index.module.css";
 
-export const Dropdown = () => {
+interface IDropdown {
+  setSelectedContinent: any;
+  selectedContinent: string;
+}
+
+export const Dropdown: React.FC<IDropdown> = ({
+  setSelectedContinent,
+  selectedContinent,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedContinent, setSelectedContinent] =
-    useState("All Regions");
 
   const toggleDropdown = () => setIsOpen(!isOpen);
   const handleOptionClick = (continent: string) => {
