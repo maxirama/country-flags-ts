@@ -21,7 +21,7 @@ export const Dropdown = () => {
     >
       <div className={style["dropdown-header"]} onClick={toggleDropdown}>
         {selectedContinent}
-        <span className={style["dropdown-arrow"]}>▼</span>
+        <span className={style["dropdown-arrow"]}><i className="fa-solid fa-chevron-down"></i></span>
       </div>
       {isOpen && (
         <ul className={style["dropdown-menu"]}>

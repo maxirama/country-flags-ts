@@ -8,9 +8,8 @@
   background-color: white; /* Background color for the input container */
 }
 
-
 .search-input {
-  width: 100%;
+  width: 400px; /* Match width of the search bar */
   height: 100%;
   border: none;
   outline: none !important;
