@@ -10,27 +10,27 @@ import { useEffect, useState } from "react";
 export const Home = () => {
   const [searchValue, setSearchValue] = useState("");
   const [countryData, setCountryData] = useState(data);
+  const [visibleCountryData, setVisibleCountryData] = useState(data);
   const [selectedContinent, setSelectedContinent] = useState("All Regions");
 
   useEffect(() => {
-    let updatedCountryData = data.filter((country) => {
+    let updatedCountryData = visibleCountryData.filter((country) => {
       return country.name.toLowerCase().includes(searchValue.toLowerCase());
     });
-    setCountryData(updatedCountryData);
-    if (searchValue === "") {
-      setCountryData(data);
-    }
+    setVisibleCountryData(updatedCountryData);
   }, [searchValue]);
 
   useEffect(() => {
     if (selectedContinent === "All Regions") {
+      setVisibleCountryData(data);
       setCountryData(data);
       setSearchValue("");
     } else {
-      let updatedCountryData = data.filter((country) => {
+      let updatedCountryData = countryData.filter((country) => {
         return country.region.includes(selectedContinent);
       });
-      setCountryData(updatedCountryData);
+      setCountryData(data)
+      setVisibleCountryData(updatedCountryData);
       setSearchValue("");
     }
   }, [selectedContinent]);
@@ -46,7 +46,7 @@ export const Home = () => {
         />
       </FiltersContainer>
       <div className={`${style["country-card-list"]}`}>
-        {countryData.map((country) => {
+        {visibleCountryData.map((country) => {
           return (
             <CountryCard
               country={country.name}
