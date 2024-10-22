@@ -1,0 +1,27 @@
+input {
+  height: 56px;
+  width: 480px;
+  border: 0px;
+  box-shadow: 0px 0px 1px 2px lightgray;
+  outline: 0;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: -32px;
+  display: inline-block;
+
+}
+  .search-input {
+    width: 100%;
+    padding-left: 30px;
+  }
+  
+  .search-icon {
+    position: absolute;
+    color: #999; /* Optional: Icon color */
+    margin-left: 10px;
+  }
+
+  .search-bar-container{
+    display: flex;
+    align-items: center;
+  }
