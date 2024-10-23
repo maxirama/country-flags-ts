@@ -29,8 +29,7 @@ export const Dropdown: React.FC<IDropdown> = ({
   return (
     <div
       className={style["dropdown-container"]}
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
+      onClick={() => setIsOpen(!isOpen)}
     >
       <div className={style["dropdown-header"]} onClick={toggleDropdown}>
         {selectedContinent}
