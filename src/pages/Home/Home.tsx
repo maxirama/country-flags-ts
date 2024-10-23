@@ -40,33 +40,30 @@ export const Home = () => {
   }, [selectedContinent]);
 
   return (
-      <div className={`${style["home-container"]}`}>
-        <Header />
-        <FiltersContainer>
-          <SearchBar
-            setSearchValue={setSearchValue}
-            searchValue={searchValue}
-          />
-          <Dropdown
-            setSelectedContinent={setSelectedContinent}
-            selectedContinent={selectedContinent}
-          />
-        </FiltersContainer>
-        <div className={`${style["country-card-list"]}`}>
-          {visibleCountryData.map((country) => {
-            return (
-              <CountryCard
-                country={country.name}
-                flagSource={country.flags.png}
-                population={country.population}
-                capital={country.capital || " - "}
-                region={country.region}
-              />
-            );
-          })}
-          {visibleCountryData.length === 0 && <NoResults />}
-        </div>
-      <Footer />
+    <div className={`${style["home-container"]}`}>
+      <Header />
+      <FiltersContainer>
+        <SearchBar setSearchValue={setSearchValue} searchValue={searchValue} />
+        <Dropdown
+          setSelectedContinent={setSelectedContinent}
+          selectedContinent={selectedContinent}
+        />
+      </FiltersContainer>
+      <div className={`${style["country-card-list"]}`}>
+        {visibleCountryData.map((country) => {
+          return (
+            <CountryCard
+              country={country.name}
+              flagSource={country.flags.png}
+              population={country.population}
+              capital={country.capital || " - "}
+              region={country.region}
+            />
+          );
+        })}
+        {visibleCountryData.length === 0 && <NoResults />}
       </div>
+      <Footer />
+    </div>
   );
 };

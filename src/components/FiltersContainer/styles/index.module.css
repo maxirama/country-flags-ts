@@ -5,3 +5,12 @@
   justify-content: space-between;
   padding-left: 48px;
 }
+
+@media (max-width: 468px) {
+  .filters-container {
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    padding-left: 0px;
+  }
+}
