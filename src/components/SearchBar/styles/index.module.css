@@ -32,3 +32,47 @@ input::placeholder {
 input:focus {
   outline: none !important;
 }
+
+@media (max-width: 768px) {
+  .search-bar-container {
+    position: relative;
+    width: 400px; /* Match width of the search bar */
+    height: 56px; /* Match height of the search bar */
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: white; /* Background color for the input container */
+  }
+
+  .search-input {
+    width: 380px; /* Match width of the search bar */
+    height: 100%;
+    border: none;
+    outline: none !important;
+    padding-left: 50px; /* Add padding for the search icon */
+    font-size: 16px; /* Match the font size */
+  }
+}
+
+@media (max-width: 468px) {
+  .search-bar-container {
+    position: relative;
+    width: 350px; /* Match width of the search bar */
+    height: 56px; /* Match height of the search bar */
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: white; /* Background color for the input container */
+    margin-top: 50px;
+    justify-content: center;
+  }
+
+  .search-input {
+    width: 200px; /* Match width of the search bar */
+    height: 100%;
+    border: none;
+    outline: none !important;
+    padding-left: 50px; /* Add padding for the search icon */
+    font-size: 16px; /* Match the font size */
+  }
+}

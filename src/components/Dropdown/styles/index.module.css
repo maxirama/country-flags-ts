@@ -38,9 +38,18 @@ div {
   cursor: pointer;
   margin: 0;
   background-color: white;
-
 }
 
 .dropdown-item:hover {
   background-color: #ddd;
+}
+
+@media (max-width: 460px) {
+  .dropdown-container {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    padding-right: 0px;
+    gap: 16px;
+}
 }

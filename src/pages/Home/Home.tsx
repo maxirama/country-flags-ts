@@ -7,6 +7,8 @@ import data from "../../assets/data.json";
 import style from "./styles/index.module.css";
 import { useEffect, useState } from "react";
 import { useDebounce } from "use-debounce";
+import { Footer } from "../../components/Footer";
+import { NoResults } from "../../components/NoResults";
 
 export const Home = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -59,7 +61,9 @@ export const Home = () => {
             />
           );
         })}
+        {visibleCountryData.length === 0 && <NoResults />}
       </div>
+      <Footer />
     </div>
   );
 };

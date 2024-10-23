@@ -1,0 +1,22 @@
+.error-icon {
+  color: slategray;
+  font-size: 128px;
+}
+
+.no-results-container {
+  display: flex;
+  min-width: 98vw;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.no-results-container > p {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 24px;
+  color: slategray;
+}
