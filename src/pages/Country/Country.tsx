@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { Header } from "../../components/Header";
 import { IconButton } from "../../components/IconButton";
+import { CountryButton } from "../../components/CountryButton";
 import { useNavigate } from "react-router-dom";
 export const CountryPage = () => {
   const { country } = useParams();
