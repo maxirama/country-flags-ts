@@ -17,8 +17,8 @@ export const CountryCard: React.FC<ICountryCardProps> = ({
   flagSource,
 }: ICountryCardProps) => {
   return (
-    <Link to={`/country/${country}`}>
       <div className={`${styles["country-card-container"]}`}>
+          <Link to={`/country/${country}`}>
         <img src={flagSource} />
         <h4>{country}</h4>
         <span>
@@ -33,7 +33,7 @@ export const CountryCard: React.FC<ICountryCardProps> = ({
           {" "}
           <b>Capital:</b> {capital}{" "}
         </span>
-      </div>
     </Link>
+      </div>
   );
 };
