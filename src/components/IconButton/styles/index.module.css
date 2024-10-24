@@ -1,11 +1,17 @@
-
 .theme-container {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: "Lato";
-    font-weight: bold;
-    font-size: 18px;
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
-  }
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Lato";
+  font-weight: bold;
+  font-size: 18px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.borded-button {
+  box-shadow: 2px 2px 4px lightgray;
+  width: 90px;
+  padding-left: 16px;
+  background-color: white;
+}

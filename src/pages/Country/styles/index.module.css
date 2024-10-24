@@ -1,0 +1,48 @@
+.page-header {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  padding-left: 32px;
+}
+
+h2 {
+  text-align: center;
+}
+.country-img-container {
+  padding-left: 32px;
+}
+.country-img-container > img {
+  width: 560px;
+  height: 401px;
+  box-shadow: 2px 2px 4px slategray;
+}
+
+.country-info-container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 100px;
+}
+
+.country-description-container {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  justify-content: space-around;
+}
+
+.country-details-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.border-countries {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.country-page-body {
+  background-color: #f2f2f2;
+  min-height: 100vh;
+}
