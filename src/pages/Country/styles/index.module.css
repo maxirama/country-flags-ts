@@ -1,0 +1,23 @@
+.page-header {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  padding-left: 32px;
+}
+
+.country-img-container > img {
+  padding-left: 32px;
+  width: 560px;
+  height: 401px;
+}
+
+.country-info-container {
+  display: flex;
+  gap: 100px;
+}
+
+.country-description-container {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
