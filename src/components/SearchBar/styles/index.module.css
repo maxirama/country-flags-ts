@@ -1,4 +1,4 @@
-.search-bar-container {
+.search-bar-container-light {
   position: relative;
   width: 480px; /* Match width of the search bar */
   height: 56px; /* Match height of the search bar */
@@ -8,13 +8,42 @@
   background-color: white; /* Background color for the input container */
 }
 
-.search-input {
+.search-bar-container-dark {
+  position: relative;
+  width: 480px; /* Match width of the search bar */
+  height: 56px; /* Match height of the search bar */
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 4px 8px black(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: rgb(
+    40,
+    53,
+    63
+  ); /* Background color for the input container */
+}
+
+.search-input-light {
   width: 400px; /* Match width of the search bar */
   height: 100%;
   border: none;
   outline: none !important;
   padding-left: 50px; /* Add padding for the search icon */
   font-size: 16px; /* Match the font size */
+}
+
+.search-input-dark {
+  width: 400px; /* Match width of the search bar */
+  height: 100%;
+  border: none;
+  outline: none !important;
+  padding-left: 50px; /* Add padding for the search icon */
+  font-size: 16px; /* Match the font size */
+  background-color: rgb(
+    40,
+    53,
+    63
+  ); /* Background color for the input container */
+  color: white;
 }
 
 .search-icon {

@@ -1,3 +1,4 @@
+import { useThemeStore } from "../../store";
 import styles from "../CountryCard/styles/index.module.css";
 import { Link } from "react-router-dom";
 
@@ -16,9 +17,18 @@ export const CountryCard: React.FC<ICountryCardProps> = ({
   capital,
   flagSource,
 }: ICountryCardProps) => {
+  const theme = useThemeStore((state) => state.theme);
   return (
-      <div className={`${styles["country-card-container"]}`}>
-          <Link to={`/country/${country}`}>
+    <div
+      className={`${
+        styles[
+          theme === "light"
+            ? "country-card-container-light"
+            : "country-card-container-dark"
+        ]
+      }`}
+    >
+      <Link to={`/country/${country}`}>
         <img src={flagSource} />
         <h4>{country}</h4>
         <span>
@@ -33,7 +43,7 @@ export const CountryCard: React.FC<ICountryCardProps> = ({
           {" "}
           <b>Capital:</b> {capital}{" "}
         </span>
-    </Link>
-      </div>
+      </Link>
+    </div>
   );
 };
