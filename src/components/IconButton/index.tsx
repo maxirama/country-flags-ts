@@ -5,6 +5,7 @@ interface IconButtonProps {
   border?: boolean;
 }
 
+import { useThemeStore } from "../../store";
 import styles from "./styles/index.module.css";
 
 export const IconButton: React.FC<IconButtonProps> = ({
@@ -15,9 +16,16 @@ export const IconButton: React.FC<IconButtonProps> = ({
 }) => {
   const borderProps = border ? "borded-button" : "";
 
+  const theme = useThemeStore((state) => state.theme);
+
+  const style =
+    theme === "light"
+      ? { buttonTheme: "button-light" }
+      : { buttonTheme: "button-dark" };
+
   return (
     <div
-      className={`${styles["theme-container"]} ${styles[borderProps]}`}
+      className={`${styles[style.buttonTheme]} ${styles[borderProps]}`}
       onClick={handleClick}
     >
       <i className={icon}></i>

@@ -42,7 +42,13 @@ h2 {
   gap: 8px;
 }
 
-.country-page-body {
+.country-page-body-light {
   background-color: #f2f2f2;
+  min-height: 100vh;
+}
+
+.country-page-body-dark {
+  background-color: rgb(32, 44, 54);
+  color: white;
   min-height: 100vh;
 }
