@@ -1,4 +1,4 @@
-.theme-container {
+.button-light {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -8,6 +8,18 @@
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 }
+
+.button-dark {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Lato";
+  font-weight: bold;
+  font-size: 18px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  background-color: rgb(40, 53, 63) !important;
+  }
 
 .borded-button {
   box-shadow: 2px 2px 4px lightgray;

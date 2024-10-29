@@ -6,7 +6,19 @@ import { useNavigate } from "react-router-dom";
 import data from "../../assets/data.json";
 import styles from "./styles/index.module.css";
 import { Footer } from "../../components/Footer";
+import { useThemeStore } from "../../store";
 export const CountryPage = () => {
+  const theme = useThemeStore((state) => state.theme);
+
+  const style =
+    theme === "light"
+      ? {
+          countryPageBody: "country-page-body-light",
+        }
+      : {
+          countryPageBody: "country-page-body-dark",
+        };
+
   const { country } = useParams();
   const navigate = useNavigate();
   const countryData = data.find(
@@ -24,9 +36,9 @@ export const CountryPage = () => {
   };
 
   return (
-    <div className={`${styles["country-page-container"]}`}>
+    <div>
       <Header />
-      <div className={`${styles["country-page-body"]}`}>
+      <div className={`${styles[style.countryPageBody]}`}>
         <div className={`${styles["page-header"]}`}>
           <IconButton
             description="Back"
