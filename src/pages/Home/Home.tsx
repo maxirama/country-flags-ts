@@ -9,8 +9,18 @@ import { useEffect, useState } from "react";
 import { useDebounce } from "use-debounce";
 import { Footer } from "../../components/Footer";
 import { NoResults } from "../../components/NoResults";
+import { useThemeStore } from "../../store";
 
 export const Home = () => {
+  const theme = useThemeStore((state) => state.theme);
+
+  const styles =
+    theme === "light"
+      ? {
+          homeContainer: "home-container-light",
+        }
+      : { homeContainer: "home-container-dark" };
+
   const [searchValue, setSearchValue] = useState("");
   const [countryData, setCountryData] = useState(data);
   const [visibleCountryData, setVisibleCountryData] = useState(data);
@@ -23,6 +33,10 @@ export const Home = () => {
     });
     setVisibleCountryData(updatedCountryData);
   }, [debouncedValue]);
+
+  useEffect(() => {
+    console.log(theme);
+  }, [theme]);
 
   useEffect(() => {
     if (selectedContinent === "All Regions") {
@@ -40,7 +54,7 @@ export const Home = () => {
   }, [selectedContinent]);
 
   return (
-    <div className={`${style["home-container"]}`}>
+    <div className={`${style[styles.homeContainer]}`}>
       <Header />
       <FiltersContainer>
         <SearchBar setSearchValue={setSearchValue} searchValue={searchValue} />

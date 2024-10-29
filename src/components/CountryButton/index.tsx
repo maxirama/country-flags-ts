@@ -12,5 +12,9 @@ export const CountryButton: React.FC<ICountryButtonProps> = ({ country }) => {
     navigate(`/country/${country}`);
   };
 
-  return <button className={`${styles["button"]}`} onClick={() => handleClick()}>{country}</button>;
+  return (
+    <button className={`${styles["button"]}`} onClick={() => handleClick()}>
+      {country}
+    </button>
+  );
 };

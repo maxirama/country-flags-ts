@@ -19,8 +19,6 @@ export const CountryPage = () => {
     }
   });
 
-  console.log(countryBorders);
-
   const handleRedirect = () => {
     navigate("/");
   };
